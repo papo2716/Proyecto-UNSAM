@@ -1,2 +1,22 @@
 # Proyecto-UNSAM
 Aprendizaje R - Diplomatura
+
+Notas clase 1 y 2
+
+
+
+### Script de notas Modulo 2
+
+ggplot(filter(gapminder, año == 2007), ##ggplot es la libreria, luego llamar primero que nada a la bbdd y se puede filtrar
+       aes(x = PBIpc, y = expVida, size = pobl/1000000, color = continente)) +  ## aes llama a las variables en x y en y a lo que se le puede dar otros atributos
+  ## size establece tamaño del punto segun la variable y color modifica color segun variable
+  geom_point() + ## tipo de grafico, en este caso diagrama de dispersion
+  scale_x_log10() + ## para modificar la escala (llama a escala logaritmica)
+  scale_colour_manual(values = color_continentes) + ## para modificar manualmente la escala de colores
+  theme_minimal() + ## tema que se puede dar
+  labs(title = "Riqueza vs. salud en los países del mundo", subtitle = "según datos 2007",
+       size = "población (millones)", 
+       x = "PBI per capita (USD)", y = "expectativa de vida en años",
+       caption = "fuente: Gapminder, www.gapminder.com") ## toques finales para modificar etiquetas, etc
+       
+Cada linea de codigo es una capa como en photoshop
